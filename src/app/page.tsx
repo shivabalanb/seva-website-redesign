@@ -1,113 +1,76 @@
 import Image from "next/image";
+import Navbar from "./components/navbar";
+import { CaretDoubleDown } from "@phosphor-icons/react/dist/ssr";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
+    <div>
+      <div
+        className="relative shadow-md  bg-cover bg-center h-[800px] rounded-b-3xl flex flex-col  items-center text-center  py-32"
+        style={{ backgroundImage: "url('splash.jpg')" }}
+      >
+        <p
+          className="text-7xl font-bold  text-yellow-0 "
+          // style={{ textShadow: "2px 2px 4px rgba(0, 134, 225, 0.4)" }}
+          //text-transparent bg-clip-text bg-gradient-to-r from-yellow-0  via-[#fef3c7f7] to-yellow-0
+        >
+          Seva Charities
         </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+        <p
+          className=" text-white font-light text-3xl"
+          // style={{ textShadow: "2px 2px 4px rgba(0, 134, 225, 0.4)" }}
+        >
+          {/* A LITTLE LOVE, A BIG DIFFERENCE! */}A little love, a big
+          difference!
+        </p>
+        <CaretDoubleDown
+          className="absolute  bottom-0 mb-5 text-yellow-0"
+          size={32}
         />
       </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+      <div>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget
+        sagittis nisl. Nunc urna sem, laoreet at vehicula non, viverra id massa.
+        Nam et lectus id turpis congue dapibus at sit amet mauris. Aliquam vitae
+        mollis odio. Duis turpis est, commodo in sagittis a, volutpat nec arcu.
+        Quisque metus nunc, lacinia sed faucibus tempor, aliquet sit amet
+        tellus. Ut ac diam bibendum, lobortis lorem eu, congue ante. Aenean
+        condimentum tellus id accumsan rutrum. Donec interdum pulvinar eros, sed
+        tincidunt libero lacinia eu. Phasellus ex tellus, feugiat eu
+        sollicitudin et, commodo sit amet dolor. Nunc et ex enim. Morbi ligula
+        massa, molestie euismod malesuada eu, sagittis eu est. Donec et velit
+        nulla. Sed at dolor sit amet elit sodales pharetra. Pellentesque
+        ullamcorper pulvinar augue, facilisis efficitur erat pellentesque et.
+        Praesent diam risus, accumsan eget quam sed, iaculis congue ex. Nulla
+        viverra enim purus. Duis dui enim, tempor sit amet hendrerit vel,
+        condimentum at nisl. Phasellus semper vehicula mauris eget auctor.
+        Maecenas libero dui, iaculis sit amet lorem vel, commodo tincidunt
+        sapien. Maecenas eu turpis bibendum, rutrum sapien sed, placerat leo.
+        Donec fringilla, orci sit amet hendrerit consectetur, dui tortor egestas
+        sem, vitae egestas magna orci at est. Proin id est suscipit, tristique
+        odio ut, ultrices purus. Proin at mauris id tellus maximus sollicitudin.
+        Donec vitae placerat nunc, interdum suscipit augue. Maecenas eget tortor
+        eros. Curabitur viverra, metus eget elementum viverra, libero ligula
+        ornare orci, at placerat purus ipsum sed eros. Orci varius natoque
+        penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+        Aenean hendrerit finibus diam et porttitor. Pellentesque nec ante ac
+        felis ultrices gravida quis mollis risus. Sed enim orci, interdum nec
+        mauris a, suscipit vehicula leo. Aliquam ac lectus vel neque rhoncus
+        rutrum. Sed nulla metus, laoreet nec mi sit amet, porta consectetur mi.
+        Sed pulvinar porta augue et suscipit. Sed et lacus non massa
+        sollicitudin pharetra at ac lorem. Quisque lobortis orci sed sem auctor,
+        non porttitor ipsum euismod. In ultrices, elit at finibus varius, tellus
+        dolor efficitur justo, bibendum convallis nunc velit eleifend libero.
+        Curabitur eu molestie quam. Aliquam egestas pellentesque condimentum.
+        Aenean tellus enim, ullamcorper ac eros eu, condimentum tristique ante.
+        Morbi condimentum maximus neque, quis rhoncus felis hendrerit varius.
+        Vivamus luctus viverra tempus. Pellentesque a tincidunt lectus. Aenean
+        in lorem eget justo finibus fringilla. Etiam malesuada metus id
+        consequat pretium. Etiam dapibus turpis hendrerit vulputate placerat.
+        Praesent pretium massa ut ante commodo ullamcorper. Integer ex massa,
+        dictum quis condimentum eget, maximus fermentum nunc. Sed a diam
+        laoreet, aliquet enim vel, laoreet nisl.
       </div>
-    </main>
+    </div>
   );
 }
