@@ -6,23 +6,26 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
+type NavLink = {
+  name: String;
+  link?: [String, boolean];
+};
+
 export default function Navbar() {
   const pathname = usePathname();
 
   const [showScreen, setShowScreen] = useState<boolean>(false);
-  const navLinks = [
-    "home",
-    "officers",
-    "seva history",
-    "general meetings",
-    "merch",
-    "linktree",
-    "contact us",
-  ];
+  const [bgColor, setBgColor] = useState("");
 
-  const [bgColor, setBgColor] = useState(
-    pathname == "/" ? "transparent" : "bg-orange-2"
-  );
+  const navLinks: NavLink[] = [
+    { name: "home", link: ["/", false] },
+    { name: "officers" },
+    { name: "seva history" },
+    // "general meetings",
+    // "merch",
+    { name: "linktree", link: ["https://linktr.ee/sevacharities", true] },
+    { name: "contact us", link: ["#contact-us", false] },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,10 +35,14 @@ export default function Navbar() {
         setBgColor("transparent");
       }
     };
-
-    setBgColor("bg-orange-2");
-    if (pathname == "/") {
+    // init
+    if (pathname == "/" && window.scrollY < 500) {
       setBgColor("transparent");
+    } else {
+      setBgColor("bg-orange-2");
+    }
+
+    if (pathname == "/") {
       window.addEventListener("scroll", handleScroll);
     }
     return () => {
@@ -45,21 +52,24 @@ export default function Navbar() {
 
   return (
     <>
-      <div
-        className={`max-w-screen-xl mx-auto fixed top-0 z-50 inset-x-0  flex px-16 py-4 justify-between items-center   ${bgColor}`}
-      >
-        <div className=" flex items-center">
-          <Image src="/seva_logo.png" alt="seva logo" width={42} height={42} />
-          <div className=" pl-2 text-white font-semibold text-3xl">
-            Seva Charities
+      <div className={`fixed top-0 z-50 inset-x-0 ${bgColor}`}>
+        <div className="mx-auto max-w-screen-xl flex px-8 sm:px-16 py-4 justify-between items-center">
+          <div className=" flex items-center">
+            <Image
+              src="/seva_logo.png"
+              alt="seva logo"
+              width={42}
+              height={42}
+            />
+            <h3 className=" pl-2 text-white font-semibold">Seva Charities</h3>
           </div>
+          <button
+            className="cursor-pointer"
+            onClick={() => setShowScreen(!showScreen)}
+          >
+            <List size={32} color="white" weight="bold" />
+          </button>
         </div>
-        <button
-          className="cursor-pointer"
-          onClick={() => setShowScreen(!showScreen)}
-        >
-          <List size={32} color="white" weight="bold" />
-        </button>
       </div>
       {showScreen && (
         <div className="bg-orange-2 fixed inset-0 z-40 flex flex-col gap-4 justify-center items-center">
@@ -68,16 +78,15 @@ export default function Navbar() {
               <Link
                 key={index}
                 href={`${getRoute(link)}`}
+                target={link.link && link.link[1] ? "_blank" : ""}
                 onClick={() => setShowScreen(!showScreen)}
               >
                 <button
-                  className={` hover:text-[#74ee15] ${
-                    getRoute(link) == pathname
-                      ? "text-white text-4xl"
-                      : "text-yellow-0"
-                  } text-3xl`}
+                  className={` hover:text-green-2 ${
+                    getRoute(link) == pathname ? "text-white" : "text-yellow-0"
+                  }`}
                 >
-                  {link}
+                  <h3>{link.name}</h3>
                 </button>
               </Link>
             );
@@ -88,7 +97,7 @@ export default function Navbar() {
   );
 }
 
-function getRoute(link: String): String {
-  if (link == "home") return "/";
-  return "/" + link.replace(/ /g, "-");
+function getRoute(link: NavLink): String {
+  if (link.link) return link.link[0];
+  return "/" + link.name.replace(/ /g, "-");
 }

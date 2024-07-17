@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-6xl sm:text-7xl;
+  }
+  h2 {
+    @apply text-3xl sm:text-6xl;
+  }
+  h3 {
+    @apply text-2xl sm:text-3xl;
+  }
+
+  h6 {
+    @apply text-xl sm:text-2xl;
+  }
+
+  p {
+    @apply text-base md:text-xl;
+  }
+}
