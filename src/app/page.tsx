@@ -81,6 +81,7 @@ export default function Home() {
           layout="responsive"
           width={100}
           height={100}
+          
         />
         {/* <Image
           className="hidden md:flex "
