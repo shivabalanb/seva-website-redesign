@@ -2,13 +2,14 @@ import Image from "next/image";
 import Navbar from "./components/Navbar";
 import { CaretDoubleDown } from "@phosphor-icons/react/dist/ssr";
 import Footer from "./components/Footer";
+import Gallery from "./components/Gallery";
 
 export default function Home() {
   return (
     <div>
       <section
         id="splash"
-        className="relative shadow-md  bg-cover bg-center h-[800px] rounded-b-3xl flex flex-col  items-center text-center  py-32"
+        className="relative shadow-md  bg-cover bg-center h-[700px]  sm:h-[800px] rounded-b-3xl flex flex-col  items-center text-center  py-32"
         style={{ backgroundImage: "url('splash.jpg')" }}
       >
         <h1
@@ -81,21 +82,16 @@ export default function Home() {
           layout="responsive"
           width={100}
           height={100}
-          
         />
-        {/* <Image
-          className="hidden md:flex "
-          src="/infographic_lg.svg"
-          alt="infographic"
-          layout="responsive"
-          width={100}
-          height={100}
-        /> */}
+
         <p className=" text-green-1 text-sm sm:text-lg text-center py-2">
           Learn more by visiting{" "}
-          <span className=" text-orange-2 font-semibold">
+          <a
+            className="hover:cursor-pointer text-orange-2 font-semibold"
+            href="https://apusa.org/"
+          >
             {"Akshaya Patra >"}
-          </span>
+          </a>
         </p>
       </section>
       <section
@@ -112,66 +108,7 @@ export default function Home() {
         </div>
       </section>
       <div className="bg-black">
-        <section
-          id="gallery"
-          className="p-2 grid gap-2 grid-cols-5 md:grid-cols-10 auto-rows-[200px] md:auto-rows-[100px] grid-flow-dense "
-        >
-          <div className="relative col-span-2 md:col-span-2 md:row-span-2">
-            <Image
-              src="/gallery/1.jpg"
-              alt="party "
-              layout="fill"
-              objectFit="cover"
-              className="rounded-xl"
-            />{" "}
-          </div>
-          <div className="relative col-span-3 md:col-span-3 md:row-span-2">
-            <Image
-              src="/gallery/2.jpg"
-              alt="seniors "
-              layout="fill"
-              objectFit="cover"
-              className="rounded-xl"
-            />
-          </div>
-          <div className="relative col-span-2 md:col-span-2 md:row-span-2">
-            <Image
-              src="/gallery/4.jpg"
-              alt="tote"
-              layout="fill"
-              objectFit="cover"
-              className="rounded-xl"
-            />
-          </div>
-          <div className=" relative col-span-3 md:col-span-3 md:row-span-4 ">
-            <Image
-              src="/gallery/3.jpg"
-              alt="lakehouse"
-              layout="fill"
-              objectFit="cover"
-              className="rounded-xl"
-            />
-          </div>
-
-          <div className="relative col-span-3 md:col-span-4 md:row-span-2">
-            <Image
-              src="/gallery/5.jpg"
-              alt="hike"
-              layout="fill"
-              objectFit="cover"
-              className="rounded-xl"
-            />
-          </div>
-          <div className="relative col-span-2 row-span-1 md:col-span-3 md:row-span-2">
-            <Image
-              src="/gallery/6.jpg"
-              alt="longhorn"
-              layout="fill"
-              objectFit="cover"
-              className="rounded-xl"
-            />
-          </div>
-        </section>
+        <Gallery />
         <Footer />
       </div>
     </div>

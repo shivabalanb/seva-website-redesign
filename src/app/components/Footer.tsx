@@ -1,14 +1,15 @@
 import { InstagramLogo, Envelope, Phone } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
+import Link from "next/link";
 
 const contacts = [
   {
-    icon: <InstagramLogo size={32} />,
+    icon: <Envelope size={32} />,
     name: "sevacharities@gmail.com",
     link: "mailto:sevacharities@gmail.com",
   },
   {
-    icon: <Envelope size={32} />,
+    icon: <InstagramLogo size={32} />,
     name: "@sevacharities",
     link: "https://www.instagram.com/sevacharities/",
   },
@@ -27,9 +28,14 @@ export default function Footer() {
           if passionate enough, can make a difference!
         </h6>
         <div className="  flex justify-center ">
-          <button className="bg-green-500 hover:bg-green-400 hover:text-black text-white font-semibold py-4 px-4  border-b-4 border-green-700 hover:border-green-500 rounded-xl">
-            <p>👳‍♂️ Become a Member</p>
-          </button>
+          <Link
+            href="https://docs.google.com/forms/d/e/1FAIpQLSeuLEMy7xR6q7MlEWf4vGkAU_GwI4tFtEe98VnLXAFXWAzuvg/viewform"
+            target="_blank"
+          >
+            <button className="bg-green-500 hover:bg-green-400 hover:text-black text-white font-semibold py-4 px-4  border-b-4 border-green-700 hover:border-green-500 rounded-xl active:scale-95">
+              <p>🫵 Become a Member</p>
+            </button>
+          </Link>
         </div>
       </div>
       <div className="flex flex-wrap mt-16  md:justify-between items-center gap-4">
@@ -44,12 +50,22 @@ export default function Footer() {
           height={300}
         />
         <div className="flex flex-col gap-4">
-          {contacts.map((i, index) => (
-            <div key={index} className="flex items-center gap-2">
-              {i.icon}
-              <p>{i.name}</p>
-            </div>
-          ))}
+          {contacts.map((contact, index) => {
+            const { icon, name, link } = contact;
+            return link ? (
+              <Link key={index} href={link} target="_blank">
+                <div className="flex items-center gap-2">
+                  {icon}
+                  <p>{name}</p>
+                </div>
+              </Link>
+            ) : (
+              <div key={index} className="flex items-center gap-2">
+                {icon}
+                <p>{name}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
