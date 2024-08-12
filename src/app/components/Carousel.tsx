@@ -3,25 +3,25 @@ import { useRef, useEffect } from "react";
 import Image from "next/image";
 
 const images = [
-  "/history/seva1.jpg",
-  "/history/seva2.jpg",
-  "/history/seva3.jpg",
-  "/history/seva4.jpg",
-  "/history/seva5.jpg",
-  "/history/seva6.jpg",
+  "/carousel/seva3.jpg",
+  "/carousel/seva4.jpg",
+  "/carousel/seva5.jpg",
+  "/carousel/seva6.jpg",
+  "/carousel/seva7.jpg",
+  "/carousel/seva8.jpg",
 ];
 
 const Carousel: React.FC = () => {
   return (
-    <div className="banner w-full h-[325px] relative text-center overflow-hidden">
+    <div className="banner w-full h-[350px] relative text-center overflow-hidden">
       <div
-        className="slider absolute w-[300px] h-[200px] inset-0 m-auto "
+        className="slider absolute w-[320px] h-[220px] inset-0 m-auto "
         style={
           {
             transformStyle: "preserve-3d",
             transform: "perspective(2000px)",
             zIndex: 2,
-            animation: "autoRun 20s linear infinite",
+            animation: "autoRun 50s linear infinite",
           } as React.CSSProperties
         }
       >
@@ -32,7 +32,7 @@ const Carousel: React.FC = () => {
           const style: React.CSSProperties = {
             position: "absolute",
             inset: "0 0 0 0",
-            transform: `rotateY(${rotation}deg) translateZ(300px)`,
+            transform: `rotateY(${rotation}deg) translateZ(320px)`,
           };
 
           return (

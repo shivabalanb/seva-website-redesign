@@ -7,11 +7,11 @@ const SevaHistory = () => {
     <div className="mb-32">
       <div className="z-50 mt-24 flex flew-wrap flex-col justify-center items-center">
         <Carousel />
-        <h1 className="px-8 text-green-0 font-semibold my-12">Seva History</h1>
+        <h1 className="px-8 text-green-0 font-semibold  my-10">Seva History</h1>
         <div className="px-8 text-start  md:px-36 lg:text-center mb-44">
           <p>
             Family is an integral part of Seva, as it embodies the values of{" "}
-            <span className="text-orange-1 font-semibold">
+            <span className=" text-orange-1 font-semibold">
               love, compassion, and service.
             </span>{" "}
             We practice the act of selfless service, which represents the

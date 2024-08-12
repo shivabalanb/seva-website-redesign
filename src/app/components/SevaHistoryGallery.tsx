@@ -5,6 +5,7 @@ import { useState } from "react";
 export default function SevaHistoryGallery() {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const srcSet = [
+    "/history/seva7.jpg",
     "/history/seva6.jpg",
     "/history/seva5.jpg",
     "/history/seva4.jpg",
@@ -18,7 +19,7 @@ export default function SevaHistoryGallery() {
   }
 
   function getSevaYear(): string {
-    return (2022 - selectedIndex).toString();
+    return (2023 - selectedIndex).toString();
   }
 
   return (
@@ -30,7 +31,7 @@ export default function SevaHistoryGallery() {
             key={index}
             onClick={() => setSelectedIndex(index)}
           >
-            <Image src={i} layout="fill" alt={i} className="rounded-sm" />
+            <Image src={i} layout="fill" alt={i} className="rounded-sm " />
             <div
               className={
                 "absolute inset-0 flex items-center justify-center rounded-sm " +
@@ -58,7 +59,7 @@ export default function SevaHistoryGallery() {
           src={srcSet[selectedIndex]}
           alt="seva1"
           layout="fill"
-          className="z-[0] rounded-xl transition-opacity duration-500"
+          className="z-[0] rounded-xl transition-opacity duration-500 object-cover"
         ></Image>
       </div>
     </div>

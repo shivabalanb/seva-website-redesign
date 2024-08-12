@@ -9,7 +9,7 @@ export default function Home() {
     <div>
       <section
         id="splash"
-        className="relative shadow-md  bg-cover bg-center h-[700px]  sm:h-[800px] rounded-b-3xl flex flex-col  items-center text-center  py-32"
+        className="relative shadow-md  bg-cover bg-center h-[650px]  sm:h-[800px] rounded-b-3xl flex flex-col  items-center text-center  py-32"
         style={{ backgroundImage: "url('splash.jpg')" }}
       >
         <h1
@@ -89,6 +89,7 @@ export default function Home() {
           <a
             className="hover:cursor-pointer text-orange-2 font-semibold"
             href="https://apusa.org/"
+            target="_blank"
           >
             {"Akshaya Patra >"}
           </a>
@@ -96,7 +97,7 @@ export default function Home() {
       </section>
       <section
         id="fundraised"
-        className="  sm:h-64 flex flex-col py-4 sm:flex-row  justify-around items-center mt-16 bg-cover bg-[url('/fundraise_banner.svg')] text-center rounded-t-3xl"
+        className="  sm:h-64 flex flex-col py-4 sm:flex-row  justify-around items-center mt-16 bg-cover bg-[url('/fundraise_banner.svg')] text-center rounded-t-3xl w-full bg-blue-950"
       >
         <div>
           <h6 className="text-green-0">Last year Seva raised</h6>

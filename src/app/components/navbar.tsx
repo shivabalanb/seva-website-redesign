@@ -73,7 +73,7 @@ export default function Navbar() {
         </div>
       </div>
       {showScreen && (
-        <div className="bg-orange-2 fixed inset-0 z-40 flex flex-col gap-4 justify-center items-center">
+        <div className="bg-orange-2 fixed inset-0 z-40 flex flex-col gap-2 justify-center items-center">
           {navLinks.map((link, index) => {
             return (
               <Link
@@ -83,7 +83,7 @@ export default function Navbar() {
                 onClick={() => setShowScreen(!showScreen)}
               >
                 <button
-                  className={` hover:text-green-2 ${
+                  className={` hover:text-green-2 p-2 ${
                     getRoute(link) == pathname ? "text-white" : "text-yellow-0"
                   }`}
                 >
